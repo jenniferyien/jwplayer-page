@@ -1,4 +1,4 @@
-@import (less) "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css";
+@import (less) "//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 @white: #fff;
@@ -18,7 +18,6 @@
 h1, h2, h3, h4 {
   font-family: Karbon, Helvetica, Arial, sans-serif; //Karbon is paid font, used fallbacks
   font-size: 3.75em;
-  line-height: 15px;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -40,11 +39,21 @@ p, a {
     background-image: url("../img/logo.svg");
     background-size: contain;
     background-repeat: no-repeat;
-    width: 150px;
+    background-position: center;
+    width: 125px;
     height: 50px;
   }
   .mobile-display {
     float: right;
+  }
+  .navbar-toggle {
+    border: none;
+    &:hover {
+      background-color: transparent;
+      .icon-bar {
+        background-color: @black;
+      }
+    }
   }
   .navbar-collapse {
     li a {
@@ -57,8 +66,27 @@ p, a {
     .navbar-nav.navbar-right a {
       font-size: 13px;
     }
-    @media (max-width: @screen-sm) {
+    @media (max-width: @screen-lg) {
       background-color: #222;
+      margin-right: -30px;
+      margin-left: -30px;
+      margin-top: 15px;
+      border: none;
+      li {
+        border-bottom: 1px solid #d9dde6;
+        color: #252525;
+        a {
+          font-size: .9375em !important;
+          font-weight: 600;
+          text-transform: capitalize;
+          text-align: center;
+        }
+      }
+      .navbar-right {
+        li:nth-child(5), li:last-child {
+          border-bottom: none;
+        }
+      }
     }
   }
   .main-cta {
@@ -66,8 +94,13 @@ p, a {
     background-color: @btn-red;
     border: none;
     height: 41px;
+    font-size: 15px;
+    text-transform: uppercase;
     &:hover {
-      background-color: @hover-red;
+      background-color: @hover-red !important;
+    }
+    @media (max-width: @screen-lg) {
+      margin: 5px 15px;
     }
   }
 }
@@ -77,6 +110,9 @@ p, a {
   background-size: cover;
   background-position: center;
   padding-top: 150px;
+  @media (max-width: @screen-xs) {
+    padding-top: 100px;
+  }
   .container {
     display: flex;
     flex-direction: column;
@@ -102,6 +138,13 @@ p, a {
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: @screen-xs) {
+      flex-direction: column;
+      h1 {
+        line-height: normal;
+        margin: 15px 0 0;
+      }
+    }
   }
   .hero-title {
     margin-left: 15px;
@@ -124,6 +167,9 @@ p, a {
     border: none;
     padding: .833em 1.666em;
     margin-bottom: 35px;
+    &:hover {
+      background-color: @light-grey !important;
+    }
   }
 }
 
@@ -143,16 +189,27 @@ p, a {
   }
   .types {
     text-align: center;
-    display: flex;
-    justify-content: center;
+    display: inline-block;
     margin-bottom: 75px;
     > div {
       padding: 0 50px;
+      @media (max-width: @screen-lg) {
+        &:last-child {
+          width: 100%;
+          margin-top: 15px;
+          h2 {
+            margin-bottom: 0 0 15px;
+          }
+          p {
+            height: 50px;
+          }
+        }
+      }
       h2 {
         font-weight: 300;
         text-transform: uppercase;
         margin: 0 0 30px;
-        height: 50px;
+        min-height: 50px;
         line-height: normal;
       }
       h4 {
@@ -163,7 +220,7 @@ p, a {
       p {
         font-size: 15px;
         margin: 15px 0;
-        height: 100px;
+        min-height: 100px;
         color: @light-blue-violet;
       }
       li {
@@ -198,14 +255,24 @@ p, a {
     align-items: center;
     width: 90%;
     margin: auto auto 100px;
+    @media (max-width: @screen-sm) {
+      flex-direction: column;
+    }
     &.image-right {
       flex-direction: row-reverse;
+      @media (max-width: @screen-sm) {
+        flex-direction: column;
+      }
     }
     .info-image {
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
       padding-bottom: 25%;
+      @media (max-width: @screen-sm) {
+        padding-bottom: 50%;
+        margin-bottom: 25px;
+      }
     }
     .info-details {
       padding: 0 50px;
@@ -215,6 +282,10 @@ p, a {
       }
       p {
         font-size: 15px;
+      }
+      @media (max-width: @screen-sm) {
+        padding: 0 15px;
+        text-align: center;
       }
     }
     &:last-child {
@@ -234,13 +305,26 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
+    min-height: 50px;
+    @media (max-width: @screen-lg) {
+      flex-direction: column;
+      > div {
+        padding: 15px 0;
+      }
+    }
   }
   .footer-nav {
     ul {
       display: flex;
+      justify-content: center;
       margin: 0;
       padding: 0;
+      @media (max-width: @screen-sm) {
+        flex-direction: column;
+        li {
+          padding: 5px 0;
+        }
+      }
       li {
         list-style: none;
         a {
@@ -251,4 +335,36 @@ footer {
       }
     }
   }
+}
+
+// modify bootstrap nav breakpoint
+@media (max-width: @screen-lg) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse {
+        display: none;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
 }
