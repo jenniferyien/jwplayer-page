@@ -6371,4 +6371,21 @@ p {
 }
 .playlist-types {
   background-color: #465371;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.info {
+  display: flex;
+  align-items: center;
+}
+.info.image-right {
+  flex-direction: row-reverse;
+}
+.info .info-image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-bottom: 25%;
 }

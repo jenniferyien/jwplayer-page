@@ -1,58 +1,82 @@
 <!doctype html>
 <html>
-<head>
- <title>JW Player Webpage</title>
- <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
- <nav class="navbar navbar-inverse" role="navigation">
-   <div class="container-fluid">
-     <div class="navbar-header">
-       <div class='mobile-display'>
-         <button type="button" class="navbar-toggle">
-           <span class="sr-only">Toggle navigation</span>
-           <span class="icon-bar"></span>
-           <span class="icon-bar"></span>
-           <span class="icon-bar"></span>
-         </button>
-         <a class="btn btn-primary btn-lg hidden-lg hidden-md hidden-sm" role="button">Get Started</a>
+  <head>
+    <title>JW Player Webpage</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+   <nav class="navbar navbar-inverse" role="navigation">
+     <div class="container-fluid">
+       <div class="navbar-header">
+         <div class='mobile-display'>
+           <button type="button" class="navbar-toggle">
+             <span class="sr-only">Toggle navigation</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </button>
+           <a class="btn btn-primary btn-lg hidden-lg hidden-md hidden-sm" role="button">Get Started</a>
+         </div>
+         <a class="navbar-logo" href="#"><div class='logo-image'></div></a>
        </div>
-       <a class="navbar-logo" href="#"><div class='logo-image'></div></a>
+       
+       <div class="collapse navbar-collapse">
+         <ul class="nav navbar-nav">
+           <li><a href="#">Solutions</a></li>
+           <li><a href="#">Customers</a></li>
+           <li><a href="#">Pricing</a></li>
+         </ul>
+         <ul class="nav navbar-nav navbar-right">
+           <li><a href="#">Company</a></li>
+           <li><a href="#">Careers</a></li>
+           <li><a href="#">Developer</a></li>
+           <li><a href="#">Support</a></li>
+           <li><a href="#">Sign-In</a></li>
+           <a class="btn btn-primary btn-lg hidden-xs" role="button">Get Started</a>
+         </ul>
+       </div>
      </div>
-     
-     <div class="collapse navbar-collapse">
-       <ul class="nav navbar-nav">
-         <li><a href="#">Solutions</a></li>
-         <li><a href="#">Customers</a></li>
-         <li><a href="#">Pricing</a></li>
-       </ul>
-       <ul class="nav navbar-nav navbar-right">
-         <li><a href="#">Company</a></li>
-         <li><a href="#">Careers</a></li>
-         <li><a href="#">Developer</a></li>
-         <li><a href="#">Support</a></li>
-         <li><a href="#">Sign-In</a></li>
-         <a class="btn btn-primary btn-lg hidden-xs" role="button">Get Started</a>
-       </ul>
+   </nav>
+   
+   <div class='hero'>
+     <div class='container'>
+       <div class='titling'>
+         <div class='title-icon'></div>
+         <h1 class='hero-title'>{{heading}}</h1>
+       </div>
+       <p class='hero-description'>{{subheading}}</p>
+       <a class="hero-cta-btn btn" role="button" href={{button.link}} style="background-color:{{button.color}};">{{button.label}}</a>
+       <div class='product-image'></div>
      </div>
    </div>
- </nav>
- 
- <div class='hero'>
-   <div class='container'>
-     <div class='titling'>
-       <div class='title-icon'></div>
-       <h1 class='hero-title'>{{heading}}</h1>
+   
+   <div class='playlist-types'>
+     <h2 class='playlist-header'>{{columnsBlock.heading}}</h2>
+     <div class='types'>
+       {{#columnsBlock.columns}}
+    		<div class='col-md-4 col-sm-12'>
+          <h2>{{heading}}</h2>
+          <p>{{description}}</p>
+          <div>
+            <h4>{{links-list.label}}</h4>
+            {{#links-list.links}}
+              <li><a href={{link}}>{{label}}</a></li>
+            {{/links-list.links}}
+          </div>
+        </div>
+      {{/columnsBlock.columns}}
      </div>
-     <p class='hero-description'>{{subheading}}</p>
-     <a class="hero-cta-btn btn" role="button" href={{button.link}} style="background-color:{{button.color}};">{{button.label}}</a>
-     <div class='product-image'></div>
    </div>
- </div>
- 
- <div class='playlist-types'>
-   <h2 class='playlist-header'></h2>
-   <div class='types'></div>
- </div>
-</body>
+
+  {{#sideBySide}}
+    <div class='info {{layout-type}}'>
+      <div class='col-xs-4 info-image' style="background-image: url('./{{image}}')"></div>
+      <div class='col-xs-8'>
+        <h3>{{heading}}</h3>
+        <p>{{description}}</p>
+      </div>
+    </div>
+  {{/sideBySide}}
+
+  </body>
 </html>

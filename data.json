@@ -78,16 +78,18 @@
 			}
 		]
 	},
-	"sideBySide": {
-		"image": "img/monetization.svg",
-		"layout-type": "image-left",
-		"heading": "Monetization",
-		"description": "For ad-supported video, every impression counts. With the right technology and experts to guide you with set-up, youâ€™ll get the best possible ad fill and CPMs."
-	},
-	"sideBySide": {
-		"image": "img/developer-tools.svg",
-		"layout-type": "image-right",
-		"heading": "Developer Tools",
-		"description": "Flexble player and platform APIs allow for extensive integration and sophisticated workflows. Implement video into your products without learning video engineering, codecs & formats. Demo apps and sample code help you incorporate video into your native mobile apps quickly and painlessly."
-	}
+	"sideBySide": [
+		{
+			"image": "img/monetization.svg",
+			"layout-type": "image-left",
+			"heading": "Monetization",
+			"description": "For ad-supported video, every impression counts. With the right technology and experts to guide you with set-up, youâ€™ll get the best possible ad fill and CPMs."
+		},
+		{
+			"image": "img/developer-tools.svg",
+			"layout-type": "image-right",
+			"heading": "Developer Tools",
+			"description": "Flexble player and platform APIs allow for extensive integration and sophisticated workflows. Implement video into your products without learning video engineering, codecs & formats. Demo apps and sample code help you incorporate video into your native mobile apps quickly and painlessly."
+		}
+	]
 }
