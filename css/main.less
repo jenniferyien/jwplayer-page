@@ -1,8 +1,94 @@
-@background-color: #ffffff;
-@text-color: #ddd;
+@import (less) "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-p{
-  background-color: @background-color;
-  color: @text-color;
-  padding: 15px;
+@white: #ffffff;
+@blue-violet: #465371;
+
+h1 {
+  font-family: Karbon, Helvetica, Arial, sans-serif; //Karbon is paid font, used fallbacks
+  font-size: 58px;
+  line-height: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  border: none;
+  .logo-image {
+    background-image: url("../img/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 50px;
+  }
+  .mobile-display {
+    float: right;
+  }
+}
+
+.hero {
+  background-image: url("../img/hero-bg.png");
+  background-size: cover;
+  padding-top: 100px;
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .product-image {
+    background-image: url("../img/product-shot.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-bottom: 50%;
+    width: 100%;
+  }
+  .title-icon {
+    background-image: url("../img/upload-icon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 40px;
+  }
+  .titling {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-title {
+    margin-left: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: @white;
+  }
+  .hero-description {
+    text-align: center;
+    width: 75%;
+    padding: 35px 0;
+    margin: 0;
+    color: @white;
+  }
+  .btn {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 500;
+    border: none;
+    padding: 10px 25px;
+    margin-bottom: 35px;
+  }
+}
+
+.playlist-types {
+  background-color: @blue-violet;
 }

@@ -1,6 +1,14 @@
 module.exports = function(grunt) {
-
   grunt.initConfig({
+    mustache_render: {
+      all: {
+        files: [{
+          data: "data.json",
+          template: "src/main.mustache",
+          dest: "index.html"
+        }]
+      }
+    },
 		less : {
 			dist : {
 				files : {
@@ -12,7 +20,11 @@ module.exports = function(grunt) {
 			css : {
 				files : '**/*.less',
 				tasks : ['less']
-			}
+			},
+      template : {
+        files : '**/*.mustache',
+        tasks : ['mustache_render']
+      }
 		},
 		connect: {
 			server : {
@@ -24,9 +36,10 @@ module.exports = function(grunt) {
 			keepalive : true
 		}
 	});
-  
+
   grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.registerTask('default', ['less', 'watch']);
+  grunt.loadNpmTasks('grunt-mustache-render');
+  grunt.registerTask('default', ['less', 'watch', 'mustache_render']);
 };

@@ -19,6 +19,7 @@
   "dependencies": {
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
+    "mustache": "^2.3.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
@@ -29,6 +30,7 @@
     "grunt-contrib-less": "^1.4.1",
     "grunt-contrib-uglify": "^3.3.0",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-mustache-render": "^1.9.2",
     "grunt-webpack": "^3.0.2",
     "jit-grunt": "^0.10.0"
   }
