@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     mustache_render: {
       all: {
         files: [{
-          data: "data.json",
+          data: "data.json", 
           template: "src/main.mustache",
           dest: "index.html"
         }]
