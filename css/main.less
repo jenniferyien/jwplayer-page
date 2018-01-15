@@ -3,6 +3,7 @@
 
 @white: #fff;
 @black: #000;
+@black-ish: #222;
 @btn-red: #FF0046;
 @hover-red: #97052d;
 @blue-violet: #465371;
@@ -42,6 +43,7 @@ p, a {
     background-position: center;
     width: 125px;
     height: 50px;
+    margin-right: 25px;
   }
   .mobile-display {
     float: right;
@@ -59,6 +61,9 @@ p, a {
     li a {
       text-transform: uppercase;
       color: @white;
+      &:hover {
+        color: @light-grey;
+      }
     }
     .navbar-nav a {
       font-size: 16px;
@@ -66,20 +71,26 @@ p, a {
     .navbar-nav.navbar-right a {
       font-size: 13px;
     }
+    @media (min-width: @screen-lg) {
+      display: block !important;
+    }
     @media (max-width: @screen-lg) {
-      background-color: #222;
+      background-color: @black-ish;
       margin-right: -30px;
       margin-left: -30px;
       margin-top: 15px;
       border: none;
-      li {
-        border-bottom: 1px solid #d9dde6;
-        color: #252525;
-        a {
-          font-size: .9375em !important;
-          font-weight: 600;
-          text-transform: capitalize;
-          text-align: center;
+      ul {
+        margin: 0 -15px;
+        li {
+          border-bottom: 1px solid @light-grey;
+          padding: 15px 0;
+          a {
+            font-size: .9375em !important;
+            font-weight: 600;
+            text-transform: capitalize;
+            text-align: center;
+          }
         }
       }
       .navbar-right {
@@ -96,7 +107,7 @@ p, a {
     height: 41px;
     font-size: 15px;
     text-transform: uppercase;
-    &:hover {
+    &:hover, &:focus {
       background-color: @hover-red !important;
     }
     @media (max-width: @screen-lg) {
@@ -339,32 +350,32 @@ footer {
 
 // modify bootstrap nav breakpoint
 @media (max-width: @screen-lg) {
-    .navbar-header {
-        float: none;
-    }
-    .navbar-toggle {
-        display: block;
-    }
-    .navbar-collapse {
-        border-top: 1px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-    }
-    .navbar-collapse {
-        display: none;
-    }
-    .navbar-nav {
-        float: none!important;
-        margin: 7.5px -15px;
-    }
-    .navbar-nav>li {
-        float: none;
-    }
-    .navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    .navbar-text {
-        float: none;
-        margin: 15px 0;
-    }
+  .navbar-header {
+    float: none;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-collapse {
+    display: none;
+  }
+  .navbar-nav {
+    float: none!important;
+    margin: 7.5px -15px;
+  }
+  .navbar-nav>li {
+    float: none;
+  }
+  .navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .navbar-text {
+    float: none;
+    margin: 15px 0;
+  }
 }
